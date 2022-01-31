@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>COVID-19 Data Tracker</h1>
+    <p>Track COVID-19 cases, deaths, and risk levels for the state of your choice!</p>
+
+    <main>
+        <div class="search-container">
+            <form id="search-form">
+                <input id="city-input" placeholder="Dropdown" type="text" />
+                <button id="test-btn">Submit</button>
+            </form>
+        </div>
+
+        <div class="data-container">
+            <h3 id="state-search-term">State</h3>
+            <ul class="list-group">
+                <li class="new-cases">New Cases: <span class="case-number"></span></li>
+                <li class="new-deaths">New Deaths: <span class="death-number"></span></li>
+                <li class="risk-levels">*Risk Level: <span class="risk-level-number"></span></li>
+            </ul>
+            <p class="risk-statement">*According to CovidActNow.org, the risk level looks at three things: daily new cases (per 100K), infection rate, and positive test rate. Each state is graded on a scale from 1-5, with 1 being low risk and 5 being extremely high risk.</p>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
