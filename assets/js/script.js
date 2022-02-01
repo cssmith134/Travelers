@@ -25,8 +25,8 @@ var getCovidData = function(stateAbbr, stateName) {
                 console.log(data);
                 structureHTML(data.actuals, data.riskLevels, stateName)
             })
-        }else{
-            alert("Please select a state")
+        // }else{
+        //     alert("Please select a state")
         } 
     })
 }
@@ -36,15 +36,17 @@ var structureHTML = function(data, risk, state)  {
 
     var newCases = data.newCases;
         var newCasesNo = newCases.toLocaleString("en-US")
-        caseNumberEl.innerHTML = newCasesNo
+        caseNumberEl.innerHTML = "New Cases: " + newCasesNo
 
     var newDeaths = data.newDeaths;
         var newDeathsNo = newDeaths.toLocaleString("en-US")
-        deathNumberEl.innerHTML = newDeathsNo
+        deathNumberEl.innerHTML = "New Deaths: " + newDeathsNo
 
     console.log(risk);
     var levelsNumber = risk.overall;
-        riskLevelNumberEl.innerHTML = levelsNumber
+        var riskLevel = "*Risk Level: ";
+        riskLevelsEl.textContent = riskLevel
+        riskLevelNumberEl.textContent = levelsNumber
 
         if(levelsNumber < 2) {
             riskLevelNumberEl.style.backgroundColor = "green";
@@ -56,6 +58,10 @@ var structureHTML = function(data, risk, state)  {
             riskLevelNumberEl.style.backgroundColor = "red";
             riskLevelNumberEl.style.display = "inline";
         }
+
+    var statement = "*According to CovidActNow.org, the risk level looks at three things: daily new cases (per 100K), infection rate, and positive test rate. Each state is graded on a scale from 1-5, with 1 being low risk and 5 being extremely high risk."
+    var riskStatementEl = document.querySelector(".risk-statement")
+    riskStatementEl.innerHTML= statement;
 }
 
 states();
