@@ -1,4 +1,4 @@
-var searchFormEl = document.querySelector("#search-form");
+var searchFormEl = document.querySelector("#search-container");
 var stateInputEl = document.querySelector("#city-input")
 var stateSearchTermEl = document.querySelector("#state-search-term")
 var caseNumberEl = document.querySelector(".case-number")
@@ -6,21 +6,16 @@ var deathNumberEl = document.querySelector(".death-number")
 var riskLevelsEl = document.querySelector(".risk-levels")
 var riskLevelNumberEl = document.querySelector(".risk-level-number")
 
-var formSubmitHandler = function(event) {
-    event.preventDefault();
+var states = function() {
+    var statesEl = document.querySelector("#states")
+    var stateAbbr = statesEl.options[statesEl.selectedIndex].value
+    var stateName = statesEl.options[statesEl.selectedIndex].text
+    console.log(stateAbbr, stateName);
+    getCovidData(stateAbbr, stateName);
+} 
 
-    var stateName = stateInputEl.value.trim();
-
-    if(stateName){
-        getCovidData(stateName);
-        stateInputEl.value = ""
-    }else{
-        alert("Enter a city name")
-    }
-}
-
-var getCovidData = function(stateName) {
-    const apiUrl = "https://api.covidactnow.org/v2/state/" + stateName + ".json?apiKey=61dfc57132df48e3b3c4c8497c299572";
+var getCovidData = function(stateAbbr, stateName) {
+    const apiUrl = "https://api.covidactnow.org/v2/state/" + stateAbbr + ".json?apiKey=61dfc57132df48e3b3c4c8497c299572";
 
     fetch(apiUrl)
     //converts the response to json
@@ -28,7 +23,7 @@ var getCovidData = function(stateName) {
         if(response.ok){
             response.json().then(function(data){
                 console.log(data);
-                structureHTML(data.actuals, data.state, data.riskLevels)
+                structureHTML(data.actuals, data.riskLevels, stateName)
             })
         }else{
             alert("Please select a state")
@@ -36,7 +31,7 @@ var getCovidData = function(stateName) {
     })
 }
 
-var structureHTML = function(data, state, risk) {
+var structureHTML = function(data, risk, state)  {
     stateSearchTermEl.textContent = state;
 
     var newCases = data.newCases;
@@ -63,5 +58,5 @@ var structureHTML = function(data, state, risk) {
         }
 }
 
-
-searchFormEl.addEventListener("submit", formSubmitHandler);
+states();
+// searchFormEl.addEventListener("submit", states);
