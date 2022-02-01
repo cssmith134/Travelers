@@ -11,6 +11,9 @@ var currentQuestionIndex = 0;
 var time = questions.length * 15;
 var timerId;
 
+//WHEN I click travel quiz on a navigation bar
+//THEN I am presented with fun travel quiz webpage
+//WHEN I click the start button 
 function startQuiz() {
   var startScreenEl = document.getElementById("start-screen");
   startScreenEl.setAttribute("class", "hide");
@@ -24,6 +27,9 @@ function startQuiz() {
   getQuestion();
 }
 
+//THEN a timer starts and I am presented with a question
+//WHEN I answer a question
+//THEN I am presented with another question
 function getQuestion() {
   var currentQuestion = questions[currentQuestionIndex];
 
@@ -45,6 +51,8 @@ function getQuestion() {
   });
 }
 
+//WHEN I answer a qustion incorrectly
+//THEN time is subtracted from the clock
 function questionClick() {
   if (this.value !== questions[currentQuestionIndex].answer) {
     time -= 10;
@@ -54,11 +62,11 @@ function questionClick() {
     }
     timerEl.textContent = time;
     feedbackEl.textContent = "Wrong!";
-    feedbackEl.style.color = "pink";
+    feedbackEl.style.color = "white";
     feedbackEl.style.fontSize = "200%";
   } else {
     feedbackEl.textContent = "Correct!";
-    feedbackEl.style.color = "blue";
+    feedbackEl.style.color = "white";
     feedbackEl.style.fontSize = "200%";
   }
 
@@ -68,7 +76,9 @@ function questionClick() {
   }, 1000);
 
   currentQuestionIndex++;
-
+  
+  //WHEN all questions are answered or the timer reaches 0
+  //THEN the game is over
   if (currentQuestionIndex === questions.length) {
     quizEnd();
   } else {
@@ -98,7 +108,10 @@ function clockTick() {
     quizEnd();
   }
 }
+
 //Save high scores in storage
+//WHEN the game is over
+//THEN I can save my initials and score
 function saveHighscore() {
   var initials = initialsEl.value.trim();
 

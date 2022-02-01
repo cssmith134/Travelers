@@ -4,6 +4,8 @@ var saveBtn = $(".saveBtn");
 $("#currentDay").text(moment().format('dddd MMMM Do YYYY'));
 
 // each time block is color-coded to indicate whether it is in the past, present, or future
+//WHEN I click schduler on navigation bar
+//THEN I am presented with schduler page with different colors depent on time
 function timeBlockColor() {
     var hour = moment().hours();
 

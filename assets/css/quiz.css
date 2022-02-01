@@ -1,11 +1,25 @@
 body {
     font-family: "Josefin Slab", serif;
+    background-image: url(./images/travelworld.jpg);
   }
+
   .wrapper {
     margin: 100px auto 0 auto;
     max-width: 600px;
   }
   
+  h1 {
+    background-color: white;
+    color: rgb(27, 60, 122);
+    border-radius: 5px;
+  }
+  
+  p {
+    background-color: white;
+    color: rgb(27, 60, 122);
+    border-radius: 5px;
+  }
+
   .hide {
     display: none;
   }
@@ -23,14 +37,14 @@ body {
   }
   
   .scores a {
-    color: rgb(166, 36, 199);
+    color: white;
   }
   
   .feedback {
     font-size: 120%;
     margin-top: 20px;
     padding-top: 10px;
-    color: gray;
+    color: white;
     border-top: 2px solid rgb(201, 193, 193);
   }
   
@@ -38,10 +52,19 @@ body {
     position: absolute;
     top: 10px;
     right: 10px;
+    color: white;
+  }
+  
+  #questions {
+    color: white;
+  }
+
+  #end-screen{
+    color: white;
   }
   
   a {
-    color: black;
+    color: white;
     text-decoration: none;
     transition: color 0.1s;
   }
@@ -55,7 +78,7 @@ body {
     margin: 5px;
     cursor: pointer;
     font-size: 100%;
-    background-color: rgb(44, 3, 90);
+    background-color: rgb(27, 60, 122);
     border-radius: 5px;
     padding: 10px;
     color: white;
@@ -64,7 +87,7 @@ body {
   }
   
   button:hover {
-    background-color: rgb(166, 36, 199);
+    background-color: rgb(59, 106, 194);
   }
   
   .choices button {
