@@ -30,7 +30,7 @@
         </nav>
     </header>
 
-    <section class="hero" id="city-weather">
+    <section class="hero">
         <div class="hero-cta">
             <h2>Travelers</h2>
             <p>
@@ -38,18 +38,68 @@
             </p>
         </div>
         <div class="hero-form">
-            <h3>Find a city weather</h3>
-            <form>
-                <label for="name">1.Enter your city name 2.It will show you the result!</label>
-                <input type="text" placeholder="Your City Name" name="name" id="enterCity" class="form-input" />
-                <button type="submit" class="searchBtn" onClick="document.getElementById('result').scrollIntoView();">
-                Let's find out!
-                </button>
-            </form>    
+            <h3>Find the weather and COVID-19 facts of a city of your choice!</h3>
+            <div class="search-container">
+                <select id="states" class="p-1" onchange="states()">
+                    <option style="text-align: center;" selected disabled>-- Select a State --</option>
+                    <option value="AL">ALABAMA</option>
+                    <option value="AK">ALASKA</option>
+                    <option value="AZ">ARIZONA</option>
+                    <option value="AR">ARKANSAS</option>
+                    <option value="CA">CALIFORNIA</option>
+                    <option value="CO">COLORADO</option>
+                    <option value="CT">CONNECTICUT</option>
+                    <option value="DE">DELAWARE</option>
+                    <option value="DC">DISTRICT OF COLUMBIA</option>
+                    <option value="FL">FLORIDA</option>
+                    <option value="GA">GEORGIA</option>
+                    <option value="HI">HAWAII</option>
+                    <option value="ID">IDAHO</option>
+                    <option value="IL">ILLINOIS</option>
+                    <option value="IN">INDIANA</option>
+                    <option value="IA">IOWA</option>
+                    <option value="KS">KANSAS</option>
+                    <option value="KY">KENTUCKY</option>
+                    <option value="LA">LOUISIANA</option>
+                    <option value="ME">MAINE</option>
+                    <option value="MD">MARYLAND</option>
+                    <option value="MA">MASSACHUSETTS</option>
+                    <option value="MI">MICHIGAN</option>
+                    <option value="MN">MINNESOTA</option>
+                    <option value="MS">MISSISSIPPI</option>
+                    <option value="MO">MISSOURI</option>
+                    <option value="MT">MONTANA</option>
+                    <option value="NE">NEBRASKA</option>
+                    <option value="NV">NEVADA</option>
+                    <option value="NH">NEW HAMPSHIRE</option>
+                    <option value="NJ">NEW JERSEY</option>
+                    <option value="NM">NEW MEXICO</option>
+                    <option value="NY">NEW YORK</option>
+                    <option value="NC">NORTH CAROLINA</option>
+                    <option value="ND">NORTH DAKOTA</option>
+                    <option value="OH">OHIO</option>
+                    <option value="OK">OKLAHOMA</option>
+                    <option value="OR">OREGON</option>
+                    <option value="PA">PENNSYLVANIA</option>
+                    <option value="PR">PUERTO RICO</option>
+                    <option value="RI">RHODE ISLAND</option>
+                    <option value="SC">SOUTH CAROLINA</option>
+                    <option value="SD">SOUTH DAKOTA</option>
+                    <option value="TN">TENNESSEE</option>
+                    <option value="TX">TEXAS</option>
+                    <option value="UT">UTAH</option>
+                    <option value="VT">VERMONT</option>
+                    <option value="VA">VIRGINIA</option>
+                    <option value="WA">WASHINGTON</option>
+                    <option value="WV">WEST VIRGINIA</option>
+                    <option value="WI">WISCONSIN</option>
+                    <option value="WY">WYOMING</option>
+                </select>
+            </div>
         </div> 
     </section>
 
-    <section id="weather-container">
+    <section id="city-weather">
         <div id="weatherContent" class="row pb-2 pt-1 flex-row">
             <div class="col-12 ml-2">
                 <h2 class="section-title primary-border">
@@ -72,69 +122,11 @@
         </div>
     </section>
 
-    <section id="covid-container">
+    <section id="covid-info">
         <h2 class="section-title secondary-border">
             COVID-19 Information
         </h2>
-        <p>Track COVID-19 cases, deaths, and risk levels for the state of your choice!</p>
-         
-        <div class="search-container">
-            <select id="states" class="p-1" onchange="states()">
-                <option style="text-align: center;" selected disabled>-- Select a State --</option>
-                <option value="AL">ALABAMA</option>
-                <option value="AK">ALASKA</option>
-                <option value="AZ">ARIZONA</option>
-                <option value="AR">ARKANSAS</option>
-                <option value="CA">CALIFORNIA</option>
-                <option value="CO">COLORADO</option>
-                <option value="CT">CONNECTICUT</option>
-                <option value="DE">DELAWARE</option>
-                <option value="DC">DISTRICT OF COLUMBIA</option>
-                <option value="FL">FLORIDA</option>
-                <option value="GA">GEORGIA</option>
-                <option value="HI">HAWAII</option>
-                <option value="ID">IDAHO</option>
-                <option value="IL">ILLINOIS</option>
-                <option value="IN">INDIANA</option>
-                <option value="IA">IOWA</option>
-                <option value="KS">KANSAS</option>
-                <option value="KY">KENTUCKY</option>
-                <option value="LA">LOUISIANA</option>
-                <option value="ME">MAINE</option>
-                <option value="MD">MARYLAND</option>
-                <option value="MA">MASSACHUSETTS</option>
-                <option value="MI">MICHIGAN</option>
-                <option value="MN">MINNESOTA</option>
-                <option value="MS">MISSISSIPPI</option>
-                <option value="MO">MISSOURI</option>
-                <option value="MT">MONTANA</option>
-                <option value="NE">NEBRASKA</option>
-                <option value="NV">NEVADA</option>
-                <option value="NH">NEW HAMPSHIRE</option>
-                <option value="NJ">NEW JERSEY</option>
-                <option value="NM">NEW MEXICO</option>
-                <option value="NY">NEW YORK</option>
-                <option value="NC">NORTH CAROLINA</option>
-                <option value="ND">NORTH DAKOTA</option>
-                <option value="OH">OHIO</option>
-                <option value="OK">OKLAHOMA</option>
-                <option value="OR">OREGON</option>
-                <option value="PA">PENNSYLVANIA</option>
-                <option value="PR">PUERTO RICO</option>
-                <option value="RI">RHODE ISLAND</option>
-                <option value="SC">SOUTH CAROLINA</option>
-                <option value="SD">SOUTH DAKOTA</option>
-                <option value="TN">TENNESSEE</option>
-                <option value="TX">TEXAS</option>
-                <option value="UT">UTAH</option>
-                <option value="VT">VERMONT</option>
-                <option value="VA">VIRGINIA</option>
-                <option value="WA">WASHINGTON</option>
-                <option value="WV">WEST VIRGINIA</option>
-                <option value="WI">WISCONSIN</option>
-                <option value="WY">WYOMING</option>
-            </select>
-        </div>
+        <p>Track COVID-19 cases, deaths, and risk levels!</p>
 
         <h3 id="state-search-term" class="mt-3"></h3>
         <ul class="list-group">
