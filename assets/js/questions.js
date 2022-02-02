@@ -1,106 +1,103 @@
 // list of all questions, choices, and answers
 var questions = [
     {
-      title: "Which one has a valut of true or false?",
-      choices: ["booleans", "strings", "alerts", "numbers"],
-      answer: "booleans"
+      title: "What is bathroom in French",
+      choices: ["Les toilettes", "Le bain", "La chambre", "La maison"],
+      answer: "Les toilettes"
     },
     {
-      title: "Which is the one that Javascript can distinguish?",
+      title: "Paprika means paprika fruit in South Korea",
       choices: [
-        "numbers(0-9)",
-        "Boolean values(true or false)",
-        "strings(text)",
-        "All of the above"
+        "Yes",
+        "No",
+        "I don't know",
       ],
-      answer: "all of above"
+      answer: "Yes"
     },
     {
-      title: "Which one do you use for values in an array?",
-      choices: ["{}", "()", "[]", "<>"],
-      answer: "[]"
+      title: "What are famous food in Taiwan?",
+      choices: ["Oolong tea", "Bubble tea", "Beef noodle soup", "All of above"],
+      answer: "All of above"
     },
     {
-      title: "What does charAt() method do?",
+      title: "Can you experience feeding deer in Japan?",
       choices: [
-        "Changes string to lowercase characters",
-        "Changes string to uppercase characters",
-        "Takes an index number as a parameter, and returnes the character found at that position",
-        "Removes whitespace from start and end of string"
+        "Yes",
+        "No",
+        "I don't know",
       ],
-      answer: "Takes an index number as a parameter, and returnes the character found at that position"
+      answer: "Yes"
     },
     {
       title:
-        "What kind of data types does javascript have?",
+        "How many Disney lands in Asia?",
       choices: [
-        "Boolean",
-        "Number",
-        "String",
-        "All of above"
+        "1",
+        "2",
+        "3",
+        "None"
       ],
-      answer: "All of above"
+      answer: "3"
     },
     {
-      title: "What does '!==' mean?",
+      title: "Can you use Euro in UK?",
       choices: [
-        "Is not equal to",
-        "Greater than or equal to",
-        "Strict not equal to",
-        "Strict equal to"
+        "Yes",
+        "No",
+        "I don't know",
       ],
-      answer: "Strict not equal to"
+      answer: "No"
     },
     {
-      title: "What kind of logical operators does javascript have?",
+      title: "Which city is a capital city in Switzerland?",
       choices: [
-          "Logical and &&",
-          "Logical or ||",
-          "Logical not !",
-          "All of above"
+          "Zurich",
+          "Bern",
+          "Geneva",
+          "None of above"
       ],
-      answer: "All of above"
+      answer: "None of above"
     },
     {
-      title: "Which method allows you to specify which element you want this node added to?",
+      title: "Which word means sparkling water in Europe?",
       choices: [
-        "createTextNode()",
-        "appendChild()",
-        "createElement()",
+        "Bubble",
+        "Gas",
+        "Spark",
         "None of above"
       ],
-      answer: "appendChild()"
+      answer: "Gas"
     },
     {
       title:
-        "Why do we use jQuery?",
+        "Which country invented Tetris game?",
       choices: [
-          "Cross-browser compatibility",
-          "Common tasks in less code",
-          "Simple selectors",
-          "All of above"
+          "China",
+          "Japan",
+          "Ireland",
+          "Russia"
       ],
-      answer: "All of above"
+      answer: "Russia"
     },
     {
       title:
-        "Where should you put your scripts in html?",
+        "Which city is a capital city in Brazil?",
       choices: [
-          "Before the closing </body> tag",
-          "In the page",
-          "In the head",
+          "Rio de Janeiro",
+          "Sao Paulo",
+          "Brasilia",
           "None of above"
       ],
-      answer: "Before the closing </body> tag"
+      answer: "Brasilia"
     },
     {
-      title: "Which is right about jQueary?",
+      title: "Which number means Death in South Korea",
       choices: [
-          "jQuery is a css file you include in your pages",
-          "jQuery doesn't make it easier to handle events",
-          "jQuery offers methods that make it quick and simple to achieve a range of tasks",
+          "11",
+          "8",
+          "4",
           "None of above"
       ],
-      answer: "jQuery offers methods that make it quick and simple to achieve a range of tasks"
+      answer: "4"
     }
   ];
