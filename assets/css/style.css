@@ -18,8 +18,6 @@ body {
 
 .primary-border {
   font-size: 48px;
-  border-bottom: 3px solid;
-  border-color: var(--primary-color);
   color: var(--secondary-color);
   padding-bottom: 20px;
   text-align: center;
@@ -29,8 +27,6 @@ body {
 
 .secondary-border {
   font-size: 48px;
-  border-bottom: 3px solid;
-  border-color: var(--tertiary-color);
   color: var(--secondary-color);
   padding-bottom: 20px;
   text-align: center;
@@ -101,10 +97,9 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  background: #0C2D48;
-  color: white;
-  border-radius: 15px;
   text-shadow: none;
+  font-weight: bold;
+  text-decoration: none;
 }
 /*Header Section Ends*/
 
