@@ -1,6 +1,6 @@
 /*it still has extra css but I'll change it when html's done! thank you*/
 :root {
-  --primary-color: #fce138;
+  --primary-color: #B1D4E0;
   --secondary-color: #024e76;
   --tertiary-color: #39a6b2;
 }
@@ -101,7 +101,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  background: rgb(121, 27, 24);
+  background: #0C2D48;
   color: white;
   border-radius: 15px;
   text-shadow: none;
@@ -138,12 +138,12 @@ header nav ul li a:hover {
 }
 
 .hero-form {
-  border: 3px solid rgb(121, 27, 24);
+  border: 3px solid #0C2D48;
   background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
   margin: 3.5%;
   width: 50%;
-  color: rgb(121, 27, 24);
+  color: #0C2D48;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
 }
@@ -163,7 +163,7 @@ header nav ul li a:hover {
 
 .hero-form button {
   color: white;
-  background-color: rgb(121, 27, 24);
+  background-color: #0C2D48;
   border: none;
   padding: 10px 20px;
   font-size: 16px;
@@ -171,7 +171,7 @@ header nav ul li a:hover {
 }
 
 .hero-form button:hover {
-  background-color: rgb(209, 58, 52);
+  background-color: #0C2D48;
 }
 
 .form-input {
@@ -296,13 +296,14 @@ footer h2, footer div {
 section {
   padding: 30px 15px;
 }
-
+}
 @media screen and (max-width: 575px) {
 .hero-form button {
   width: 100%;
 }
-
+}
 .section-title {
   width: 95%;
 }
 }
+

@@ -1,3 +1,8 @@
+//Acceptance Criteria
+//GIVEN I am visiting a travel info website
+//WHEN I click the search button
+//THEN a city weather info shows up and I am presented with 5-days forecast
+
 var searchFormEl = document.querySelector("#search-container");
 var stateInputEl = document.querySelector("#city-input")
 var stateSearchTermEl = document.querySelector("#state-search-term")
@@ -6,6 +11,7 @@ var deathNumberEl = document.querySelector(".death-number")
 var riskLevelsEl = document.querySelector(".risk-levels")
 var riskLevelNumberEl = document.querySelector(".risk-level-number")
 
+//WHEN I click covid info on a navigation bar
 var states = function() {
     var statesEl = document.querySelector("#states")
     var stateAbbr = statesEl.options[statesEl.selectedIndex].value
@@ -14,6 +20,7 @@ var states = function() {
     getCovidData(stateAbbr, stateName);
 } 
 
+//THEN I am presented with covid info section
 var getCovidData = function(stateAbbr, stateName) {
     const apiUrl = "https://api.covidactnow.org/v2/state/" + stateAbbr + ".json?apiKey=61dfc57132df48e3b3c4c8497c299572";
 
