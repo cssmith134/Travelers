@@ -44,8 +44,8 @@
     </section>
 
     <section id="city-weather">
-        <div id="weatherContent" class="row pb-2 pt-1 flex-row">
-            <div class="col-12 ml-2">
+        <div id="weatherContent" class="pb-2 pt-1">
+            <div class="col-12">
                 <h2 class="section-title primary-border">
                     City Weather
                     <!-- fetch weather api here -->
@@ -54,16 +54,27 @@
                 </div>
             </div>
 
-            <div class="row pb-2 pt-1">
-                <div class="col-12 ml-2">
+            <div class="pb-2 pt-1">
+                <div class="col-12">
                     <h3>5-Day Forecast:</h3>
                 </div>
+                <div id="search-container" class="col-sm-12 col-md-5 col-lg-4">
+                    <form id="search-form">
+                        <label class="form-label" for="city-search">Search for a City:</label>
+                        <input name="city-search" id="city-search" placeholder="Enter City..." class="form-input w-100 p-2 rounded" autofocus="true" type="text">
+                        <button class="btn bg-primary w-100 mt-3 mb-2">Search</button>
+                    </form>
+                    <div class="history-search"></div>
+                </div>
+                <div class="row">
+                    <h3 id="city-search-term"></h3>
+                    <div class="col forecast text-black ml-3 mb-3"></div>
+                    <div class="col forecast text-black ml-3 mb-3"></div>
+                    <div class="col forecast text-black ml-3 mb-3"></div>
+                    <div class="col forecast text-black ml-3 mb-3"></div>
+                    <div class="col forecast text-black ml-3 mb-3"></div>
+                </div>
             </div>
-
-            <div id="fiveDay" class="row pl-2">
-                <!-- add 5 day forecast info here -->
-            </div>
-        </div>
     </section>
 
     <section id="covid-info">
