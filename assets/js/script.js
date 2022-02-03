@@ -1,8 +1,3 @@
-//Acceptance Criteria
-//GIVEN I am visiting a travel info website
-//WHEN I click the search button
-//THEN a city weather info shows up and I am presented with 5-days forecast
-
 var searchFormEl = document.querySelector("#search-form");
 var searchFormEl = document.querySelector("#search-container");
 var stateInputEl = document.querySelector("#city-input");
