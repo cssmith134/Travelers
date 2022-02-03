@@ -1,4 +1,6 @@
 # Travelers
+![Front](assets/css/images/Screen%20Shot%202022-02-02%20at%204.49.25%20PM.png)
+
 ## User Story
 ```
 AS A traveler
