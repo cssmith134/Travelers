@@ -5,14 +5,16 @@
 
 var searchFormEl = document.querySelector("#search-form");
 var searchFormEl = document.querySelector("#search-container");
-var stateInputEl = document.querySelector("#city-input")
-var stateSearchTermEl = document.querySelector("#state-search-term")
-var caseNumberEl = document.querySelector(".case-number")
-var deathNumberEl = document.querySelector(".death-number")
-var riskLevelsEl = document.querySelector(".risk-levels")
-var riskLevelNumberEl = document.querySelector(".risk-level-number")
+var stateInputEl = document.querySelector("#city-input");
+var stateSearchTermEl = document.querySelector("#state-search-term");
+var caseNumberEl = document.querySelector(".case-number");
+var deathNumberEl = document.querySelector(".death-number");
+var riskLevelsEl = document.querySelector(".risk-levels");
+var riskLevelNumberEl = document.querySelector(".risk-level-number");
 var cityInputEl = document.querySelector("#city-search");
-var citySearchTerm = document.querySelector("#city-search-term")
+var citySearchTerm = document.querySelector("#city-search-term");
+var cities = JSON.parse(localStorage.getItem("cities")) || [];
+var leftBox = document.querySelector("#leftBox");
 
 var formSubmitHandler = function(event) {
     event.preventDefault();
@@ -22,12 +24,30 @@ var formSubmitHandler = function(event) {
     var cityName = cityInputEl.value.trim();
     
     if(cityName) {
+        saveEvent(cityName);
+        saveSearch(cityName);
         getLatLon(cityName);
         cityInputEl.value = "";
-    } else {
-        alert("Please enter city name")
+    // } else {
+    //     alert("Please enter city name")
     }
 }
+
+var saveSearch = function (name) {
+    var newBtn = document.createElement("btn");
+    newBtn.classList = "btn-light-primary saveBtn border p-2 mt-2";
+    var cityBtn = name.toLowerCase();
+    cityBtn = cityBtn.split(" ");
+    for (let i = 0; i < cityBtn.length; i++) {
+        cityBtn[i] = cityBtn[i][0].toUpperCase() + cityBtn[i].substring(1);
+    }
+    newBtn.textContent = cityBtn.join(" ")
+    newBtn.style.margin = "10px";
+    newBtn.addEventListener("click", function(event) {
+      getLatLon(event.target.textContent)
+    })
+    leftBox.appendChild(newBtn)
+  }
 
 var getLatLon = function(cityName) {
     //format the weather api url
@@ -63,7 +83,12 @@ var getWeather = function(lat, lon, cityName) {
 var displayHTML = function (data, cityName) {
     console.log(data, cityName)
 
-    citySearchTerm.textContent = cityName;
+    var cityTitle = cityName.toLowerCase();
+    cityTitle = cityTitle.split(" ");
+    for(let i = 0; i <cityTitle.length; i++){
+        cityTitle[i] = cityTitle[i][0].toUpperCase() + cityTitle[i].substring(1);
+    }
+    citySearchTerm.textContent = cityTitle.join(" ");
     var forecastEls = document.querySelectorAll(".forecast");
     for (let i=0; i<forecastEls.length; i++) {
         forecastEls[i].innerHTML = "";
@@ -150,6 +175,10 @@ var structureHTML = function(data, risk)  {
             riskLevelNumberEl.style.display = "inline";
         }
 }
+
+var saveEvent = function() {
+    localStorage.setItem("cities", JSON.stringify(cities));
+  }
 
 states();
 searchFormEl.addEventListener("submit", formSubmitHandler);
