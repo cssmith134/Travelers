@@ -195,6 +195,10 @@ header nav ul li a:hover {
 .flex-row p {
   text-align: center;
 }
+
+.saveBtn {
+  cursor: pointer
+}
 /*Weather Section Ends*/
 
 /* COVID Section Starts*/
