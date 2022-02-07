@@ -1,3 +1,4 @@
+var cities = [];
 var searchFormEl = document.querySelector("#search-form");
 var searchFormEl = document.querySelector("#search-container");
 var stateInputEl = document.querySelector("#city-input");
@@ -8,7 +9,6 @@ var riskLevelsEl = document.querySelector(".risk-levels");
 var riskLevelNumberEl = document.querySelector(".risk-level-number");
 var cityInputEl = document.querySelector("#city-search");
 var citySearchTerm = document.querySelector("#city-search-term");
-var cities = JSON.parse(localStorage.getItem("cities")) || [];
 var leftBox = document.querySelector("#leftBox");
 
 var formSubmitHandler = function(event) {
@@ -19,14 +19,17 @@ var formSubmitHandler = function(event) {
     var cityName = cityInputEl.value.trim();
     
     if(cityName) {
-        // cities.push(cityName)
-        saveEvent();
-        saveSearch(cityName);
         getLatLon(cityName);
+        saveSearch(cityName);
+        cities.push(cityName);
         cityInputEl.value = "";
     // } else {
     //     alert("Please enter city name")
     }
+
+    //saves to localStorage
+    localStorage.setItem("cities", JSON.stringify(cities));
+    JSON.parse(localStorage.getItem("cities"))
 }
 
 //creates a button for search history
@@ -175,11 +178,6 @@ var structureHTML = function(data, risk)  {
             riskLevelNumberEl.style.backgroundColor = "red";
             riskLevelNumberEl.style.display = "inline";
         }
-}
-
-//saves to localStorage
-var saveEvent = function() {
-    localStorage.setItem("cities", JSON.stringify(cities));
 }
 
 states();
