@@ -52,17 +52,17 @@ This program can be run through a browser using the link below for the deployed 
 1. Clone the repository
 
 ```bash
-git clone https://github.com/hannahhan153/group-project.git
+git clone https://github.com/hannahhan153/Travelers.git
 ```
 
 2. Change the working directory
 
 ```bash
-cd group-project
+cd Travelers
 ```
 
 ## Contributing 
 Contributions, issues, and feature requests are welcome!
 
 ## Link
-https://hannahhan153.github.io/group-project/
+https://hannahhan153.github.io/Travelers
